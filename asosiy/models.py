@@ -7,7 +7,7 @@ class Project(models.Model):
     """I'm projects."""
     name = models.CharField("name", max_length=200)
     title = models.TextField('text')
-    image = models.ImageField('image')
+    image = models.ImageField(upload_to='image/', blank=True)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
 
@@ -16,3 +16,4 @@ class Project(models.Model):
     class Meta:
         verbose_name = "Loyiha"
         verbose_name_plural = "Loyihalar"
+

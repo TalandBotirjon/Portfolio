@@ -10,6 +10,9 @@
     {% load static %}
 
     <link rel="stylesheet"  href="{% static '/css/home.css' %}" type="text/css" >
+    <link rel="stylesheet"  href="{% static '/css/loader.css' %}" type="text/css" >
+    <link rel="stylesheet"  href="{% static '/css/span.css' %}" type="text/css" >
+
 <!--
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
 -->
@@ -32,7 +35,15 @@
 
             <div class="col-md-9"  >
                 <div class="card card-body">
-                    <h1>I love ...</h1>
+                    <h1>I love
+                        <a href="https://t.me/Talandbek" target="_blank" >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <img src="telegram.png" >Talandbek
+                        </a>
+                    </h1>
                     <h1>I'm interesting in ...</h1>
                     <h1>I'm work ...</h1>
                     <h1>I'm very ...</h1>
@@ -43,41 +54,53 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-md-6">
-                <div class="card card-body" >
-                    <h1>Loading..</h1>
 
-                </div>
-            </div>
-            <br>
+            {% for project in projects %}
             <div class="col-md-6"  >
                 <div class="card card-body">
-                    <h1>Loading..</h1>
+                    <img src="{{ project.image }}" alt="">
+                    <br>
+                    <h1>{{ project.name }}</h1>
+                    <p>{{ project.title }}</p>
 
                 </div>
             </div>
+            {% endfor %}
         </div>
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card card-body" >
-                    <h1>Loading..</h1>
-                </div>
-            </div>
-            <br>
-            <div class="col-md-6"  >
-                <div class="card card-body">
-                    <h1>Loading..</h1>
 
-                </div>
-            </div>
-        </div>
-        <br>
     </div>
 
     <hr>
     <footer style="background: #555; height: 150px;">
+        <div class="row">
 
+            <div class="col-md-3"  >
+                <div class="card card-body">
+                     <div class="loader">
+                         <span style="--i:0;" ></span>
+                         <span style="--i:1;" ></span>
+                         <span style="--i:2;" ></span>
+                         <span style="--i:3;" ></span>
+                         <span style="--i:4;" ></span>
+                         <span style="--i:5;" ></span>
+                         <span style="--i:6;" ></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <a href="https://t.me/Talandbek" target="_blank" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Talandbek
+                </a>
+            </div>
+
+
+        </div>
     </footer>
 </body>
 </html>
